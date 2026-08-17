@@ -3,16 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Услуги | Comfort Cleaning Group</title>
-<meta name="description" content="Услуги Comfort Cleaning Group — уборка дома, офиса и другие клининговые решения.">
+<title>Услуги | Comfort Cleaning</title>
+<meta name="description" content="Услуги Comfort Cleaning. Химчистка дивана и мебели, уборка дома и уборка офиса в Баку.">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/img/favicon-16.png">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/css/style.css">
+<noscript><style>.reveal{opacity:1!important;transform:none!important}.tab-panel{display:block!important}.faq-a{max-height:none!important}</style></noscript>
 </head>
 <body>
 <header class="site-header">
   <nav class="nav">
     <a href="index.html" class="brand">
-      <span class="brand-mark">CC</span>
-      Comfort Cleaning Group
+      <span class="brand-mark"><img src="../assets/img/favicon-96.png" alt="Логотип Comfort Cleaning"></span>
+      Comfort Cleaning
     </a>
     <div class="nav-links">
       <a href="index.html">Главная</a>
@@ -25,7 +33,10 @@
         <a href="../az/xidmetler.html">AZ</a>
         <a href="uslugi.html" class="active">RU</a>
       </div>
-      <a class="btn btn-primary" href="kontakty.html">Связаться с нами</a>
+      <a class="btn btn-whatsapp" href="https://wa.me/994552782778" target="_blank" rel="noopener">
+        <svg class="icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5c-1.4 0-2.7-0.3-3.9-0.9L4 21l1.9-4.6A8.38 8.38 0 1 1 21 11.5z"/></svg>
+        WhatsApp
+      </a>
       <button class="nav-toggle" aria-label="Меню">
         <span></span><span></span><span></span>
       </button>
@@ -36,43 +47,150 @@
 <main>
   <section class="hero">
     <div class="container">
-      <span class="eyebrow">Наши услуги</span>
-      <h1>Решения для уборки под ваши задачи</h1>
-      <p>Comfort Cleaning Group предоставляет профессиональные услуги уборки для дома и офиса.</p>
+      <span class="eyebrow">
+        <svg class="icon icon-fill" viewBox="0 0 24 24"><path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2z"/></svg>
+        Наши услуги
+      </span>
+      <h1>Химчистка Дивана, Мебели и Уборка Дома</h1>
+      <p>Предлагаем профессиональные решения для уборки под ваши задачи. Выберите вкладку ниже, чтобы узнать подробности.</p>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="grid">
-        <div class="card">
-          <div class="card-icon">🏠</div>
-          <h3>Уборка дома</h3>
-          <p>Детальная уборка квартир и домов — кухня, ванная, комнаты и общие зоны. Разово или на регулярной основе.</p>
+      <div class="quick-order-card reveal in-view">
+        <div class="quick-order-options" role="group" aria-label="Выбор услуги">
+          <button type="button" class="tab-btn qo-btn active" data-service="Химчистка дивана, кресел и мебели">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M4 14v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2"/><path d="M4 16v3"/><path d="M20 16v3"/><path d="M6 9V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+            Диван, Кресла и Мебель
+          </button>
+          <button type="button" class="tab-btn qo-btn" data-service="Химчистка ковров">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><rect x="6" y="7" width="12" height="7" rx="0.5"/><path d="M5 17v2.5M8 17v2.5M11 17v2.5M14 17v2.5M17 17v2.5M19 17v2"/></svg>
+            Химчистка Ковров
+          </button>
+          <button type="button" class="tab-btn qo-btn" data-service="Химчистка штор">
+            <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="4" x2="21" y2="4"/><path d="M5 4v13c0 1.5 1 2.5 2 2.5s2-1 2-2.5"/><path d="M11 4v15.5c0 1 1 1.5 1 1.5s1-0.5 1-1.5V4"/><path d="M15 4v13c0 1.5 1 2.5 2 2.5s2-1 2-2.5"/></svg>
+            Химчистка Штор
+          </button>
+          <button type="button" class="tab-btn qo-btn" data-service="Уборка дома и офиса">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+            Дом и Офис
+          </button>
         </div>
-        <div class="card">
-          <div class="card-icon">🏢</div>
-          <h3>Уборка офиса / коммерческих помещений</h3>
-          <p>Регулярная уборка офисов и коммерческих объектов по удобному графику.</p>
+        <a class="btn btn-whatsapp btn-block" id="quickOrderBtn" data-wa-base="https://wa.me/994552782778" data-wa-template="Здравствуйте, хочу сделать заказ на услугу {service}." href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%81%D0%B4%D0%B5%D0%BB%D0%B0%D1%82%D1%8C%20%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%20%D0%BD%D0%B0%20%D1%83%D1%81%D0%BB%D1%83%D0%B3%D1%83%20%D0%A5%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0%20%D0%B4%D0%B8%D0%B2%D0%B0%D0%BD%D0%B0%2C%20%D0%BA%D1%80%D0%B5%D1%81%D0%B5%D0%BB%20%D0%B8%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8." target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5c-1.4 0-2.7-0.3-3.9-0.9L4 21l1.9-4.6A8.38 8.38 0 1 1 21 11.5z"/></svg>
+          Отправить в WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="tabs-bar reveal in-view">
+        <button class="tab-btn active" data-tab="divan">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M4 14v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2"/><path d="M4 16v3"/><path d="M20 16v3"/><path d="M6 9V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+          Диван, Кресла и Мебель
+        </button>
+        <button class="tab-btn" data-tab="kovry">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><rect x="6" y="7" width="12" height="7" rx="0.5"/><path d="M5 17v2.5M8 17v2.5M11 17v2.5M14 17v2.5M17 17v2.5M19 17v2"/></svg>
+          Химчистка Ковров
+        </button>
+        <button class="tab-btn" data-tab="shtory">
+          <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="4" x2="21" y2="4"/><path d="M5 4v13c0 1.5 1 2.5 2 2.5s2-1 2-2.5"/><path d="M11 4v15.5c0 1 1 1.5 1 1.5s1-0.5 1-1.5V4"/><path d="M15 4v13c0 1.5 1 2.5 2 2.5s2-1 2-2.5"/></svg>
+          Химчистка Штор
+        </button>
+        <button class="tab-btn" data-tab="ev">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+          Дом и Офис
+        </button>
+      </div>
+
+      <div class="tab-panels reveal in-view">
+        <div class="tab-panel active" data-panel="divan">
+          <div class="panel-inner">
+            <div class="panel-art">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M4 14v-3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2"/><path d="M4 16v3"/><path d="M20 16v3"/><path d="M6 9V7a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
+            </div>
+            <div class="panel-content">
+              <h3>Химчистка Дивана, Кресел и Мебели</h3>
+              <p>Предлагаем глубокую химчистку диванов, кресел, стульев и матрасов. Услуга выполняется прямо у вас дома.</p>
+              <ul class="checklist">
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Чистка диванов и угловых диванов</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Чистка кресел и стульев</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Химчистка матрасов</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Удаление пятен и запахов</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <div class="card-icon">✨</div>
-          <h3>Индивидуальные запросы</h3>
-          <p>Есть особые пожелания? Свяжитесь с нами — подготовим предложение под ваши нужды.</p>
+        <div class="tab-panel" data-panel="kovry">
+          <div class="panel-inner">
+            <div class="panel-art">
+              <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="1"/><rect x="6" y="7" width="12" height="7" rx="0.5"/><path d="M5 17v2.5M8 17v2.5M11 17v2.5M14 17v2.5M17 17v2.5M19 17v2"/></svg>
+            </div>
+            <div class="panel-content">
+              <h3>Химчистка Ковров</h3>
+              <p>Проводим глубокую чистку ковров любого размера, возвращая им свежесть и чистоту.</p>
+              <ul class="checklist">
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Чистка ковров всех размеров</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Удаление пыли и пятен</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Удаление запахов</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Аккуратная сушка</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="shtory">
+          <div class="panel-inner">
+            <div class="panel-art">
+              <svg class="icon" viewBox="0 0 24 24"><line x1="3" y1="4" x2="21" y2="4"/><path d="M5 4v13c0 1.5 1 2.5 2 2.5s2-1 2-2.5"/><path d="M11 4v15.5c0 1 1 1.5 1 1.5s1-0.5 1-1.5V4"/><path d="M15 4v13c0 1.5 1 2.5 2 2.5s2-1 2-2.5"/></svg>
+            </div>
+            <div class="panel-content">
+              <h3>Химчистка Штор</h3>
+              <p>Предлагаем профессиональную чистку штор и занавесок любого типа.</p>
+              <ul class="checklist">
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Чистка штор любого типа</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Удаление пыли и пятен</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Аккуратная передача</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-panel="ev">
+          <div class="panel-inner">
+            <div class="panel-art">
+              <svg class="icon" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg>
+            </div>
+            <div class="panel-content">
+              <h3>Уборка Дома и Офиса</h3>
+              <p>Предоставляем детальную уборку квартир, домов и офисов, разовую или на регулярной основе.</p>
+              <ul class="checklist">
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Уборка кухни и ванной</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Полная уборка комнат</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Уборка офисных помещений</li>
+                <li><svg class="icon" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg> Разовая или регулярная уборка</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <p class="placeholder-note">Примечание: список услуг сейчас расширяется. Полный перечень и цены уточняйте у нас напрямую.</p>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <div class="cta-strip">
+      <div class="cta-strip reveal">
         <div>
-          <h3>Подберем подходящий пакет вместе</h3>
+          <h3>Подберем Подходящий Пакет Вместе</h3>
           <p>Расскажите о своих потребностях, и мы ответим в кратчайшие сроки.</p>
         </div>
-        <a class="btn btn-primary" href="kontakty.html">Связаться с нами</a>
+        <div class="hero-actions">
+          <a class="btn btn-whatsapp" href="https://wa.me/994552782778" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5c-1.4 0-2.7-0.3-3.9-0.9L4 21l1.9-4.6A8.38 8.38 0 1 1 21 11.5z"/></svg>
+            Написать в WhatsApp
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -80,23 +198,52 @@
 
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="brand-mark">CC</span>
-        Comfort Cleaning Group
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <span class="brand-mark"><img src="../assets/img/favicon-96.png" alt="Логотип Comfort Cleaning"></span>
+          Comfort Cleaning
+        </div>
+        <p>Предоставляем профессиональную химчистку диванов, мебели и уборку дома в Баку.</p>
+        <div class="social-row">
+          <a class="social-btn" href="https://wa.me/994552782778" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5c-1.4 0-2.7-0.3-3.9-0.9L4 21l1.9-4.6A8.38 8.38 0 1 1 21 11.5z"/></svg>
+          </a>
+          <a class="social-btn" href="https://www.instagram.com/comfort__cleaning/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a class="social-btn" href="mailto:comfortdivanyuma@gmail.com" aria-label="Email">
+            <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          </a>
+        </div>
       </div>
-      <div class="footer-links">
-        <a href="index.html">Главная</a>
-        <a href="uslugi.html">Услуги</a>
-        <a href="o-nas.html">О нас</a>
-        <a href="kontakty.html">Контакты</a>
+      <div class="footer-col">
+        <h4>Страницы</h4>
+        <div class="footer-links">
+          <a href="index.html">Главная</a>
+          <a href="uslugi.html">Услуги</a>
+          <a href="o-nas.html">О нас</a>
+          <a href="kontakty.html">Контакты</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <div class="footer-links">
+          <a href="https://wa.me/994552782778" target="_blank" rel="noopener">+994 55 278 27 78</a>
+          <a href="mailto:comfortdivanyuma@gmail.com">comfortdivanyuma@gmail.com</a>
+          <span>Баку, Азербайджан</span>
+        </div>
       </div>
     </div>
-    <p class="footer-meta">&copy; <span id="year"></span> Comfort Cleaning Group. Все права защищены.</p>
+    <p class="footer-meta">&copy; <span id="year"></span> Comfort Cleaning. Все права защищены.</p>
   </div>
 </footer>
 
-<script src="../assets/js/nav.js"></script>
+<a class="whatsapp-fab" href="https://wa.me/994552782778" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+  <svg class="icon" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5c-1.4 0-2.7-0.3-3.9-0.9L4 21l1.9-4.6A8.38 8.38 0 1 1 21 11.5z"/></svg>
+</a>
+
+<script src="../assets/js/main.js"></script>
 <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>
