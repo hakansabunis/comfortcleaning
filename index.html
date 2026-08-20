@@ -6,16 +6,18 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-<noscript><meta http-equiv="refresh" content="0; url=az/"></noscript>
+<noscript><meta http-equiv="refresh" content="0; url=en/"></noscript>
 <script>
   (function () {
     var lang = (navigator.language || navigator.userLanguage || "").toLowerCase();
-    var target = lang.indexOf("ru") === 0 ? "ru/" : "az/";
+    var target = "en/";
+    if (lang.indexOf("ru") === 0) target = "ru/";
+    else if (lang.indexOf("az") === 0) target = "az/";
     window.location.replace(target);
   })();
 </script>
 </head>
 <body>
-  <p>Comfort Cleaning. <a href="az/">Azərbaycan dilində davam et</a> / <a href="ru/">Продолжить на русском</a></p>
+  <p>Comfort Cleaning. <a href="az/">Azərbaycan dilində davam et</a> / <a href="ru/">Продолжить на русском</a> / <a href="en/">Continue in English</a></p>
 </body>
 </html>

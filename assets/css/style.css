@@ -61,6 +61,18 @@ h2 { text-wrap: balance; }
   }
 }
 
+@media (prefers-reduced-transparency: reduce) {
+  .site-header { background: #fff; backdrop-filter: none; }
+  .hero::after { display: none; }
+}
+
+.btn, .tab-btn, .mab-btn, .social-btn, .whatsapp-fab, .faq-q {
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:active, .tab-btn:active, .mab-btn:active, .social-btn:active { transform: scale(0.96); }
+.whatsapp-fab:active { transform: scale(1.02); }
+
 .container {
   width: 100%;
   max-width: var(--container);
