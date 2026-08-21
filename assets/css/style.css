@@ -151,9 +151,14 @@ h2 { text-wrap: balance; }
   flex-shrink: 0;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
+  background: linear-gradient(150deg, var(--navy-800), var(--navy-900));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .brand-mark img { width: 100%; height: 100%; object-fit: cover; }
+.brand-mark svg { width: 60%; height: 60%; }
 
 .nav-links {
   display: flex;
