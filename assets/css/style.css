@@ -21,7 +21,7 @@
   --shadow-lg: 0 24px 60px oklch(0.03 0.02 255 / 0.55);
   --container: 1152px;
   --whatsapp: #22b559;
-  --font-display: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-display: "Noto Serif Display", "Noto Serif", Georgia, "Times New Roman", serif;
   --font-body: "Plus Jakarta Sans", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Arial, sans-serif;
   --mobile-bar-h: 68px;
 }
