@@ -285,6 +285,24 @@ h2 { text-wrap: balance; }
   pointer-events: none;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  right: -8%;
+  width: 55%;
+  height: 140%;
+  background: radial-gradient(circle, oklch(0.6 0.1 215 / 0.14), transparent 68%);
+  filter: blur(40px);
+  animation: heroGlow 18s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes heroGlow {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-6%, 8%) scale(1.1); }
+}
+
 .hero-inner {
   position: relative;
   display: grid;
