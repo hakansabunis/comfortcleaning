@@ -24,10 +24,20 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png?v=3">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon-192.png?v=3">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=3">
+<script>
+(function (d) {
+  d.classList.add("js");
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    d.classList.add("motion");
+    setTimeout(function () { if (!window.__motionReady) d.classList.remove("motion"); }, 3500);
+  }
+})(document.documentElement);
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,500;1,400&family=Onest:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/css/style.css?v=8">
+<link rel="stylesheet" href="../assets/css/style.css?v=9">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -148,80 +158,107 @@
 </div>
 <main id="main">
 <section class="hero on-dark">
+  <canvas class="water" aria-hidden="true"></canvas>
   <div class="container hero-grid">
     <div class="hero-copy">
-      <h1>Чистота для дома, комфорт для жизни.</h1>
-      <p class="lead">Почувствуйте, как легко и спокойно в чистом доме и офисе. Comfort Cleaning профессионально убирает квартиры и офисы, чистит диваны, мягкую мебель, шторы и другие поверхности. Проводите время с собой и близкими, а уборку доверьте нам.</p>
-      <div class="hero-actions">
-        <a class="btn btn--gold" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%83%D0%B1%D0%BE%D1%80%D0%BA%D0%B8." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Узнать цену в WhatsApp</span></a>
+      <h1 data-split="hero">Чистота для дома, комфорт для жизни.</h1>
+      <p class="lead" data-hero-in>Почувствуйте, как легко и спокойно в чистом доме и офисе. Comfort Cleaning профессионально убирает квартиры и офисы, чистит диваны, мягкую мебель, шторы и другие поверхности. Проводите время с собой и близкими, а уборку доверьте нам.</p>
+      <div class="hero-actions" data-hero-in>
+        <a class="btn btn--gold magnetic" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%83%D0%B1%D0%BE%D1%80%D0%BA%D0%B8." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Узнать цену в WhatsApp</span></a>
         <a class="btn btn--line-dark" href="#services">Посмотреть услуги</a>
       </div>
     </div>
-    <aside class="quote-card">
-      <p class="quote-card__title">Фото. Цена. Заказ.</p>
-      <ol class="quote-steps"><li><span class="qs-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg></span><div><strong>Сфотографируйте</strong><span>Мебель, шторы или помещение</span></div></li><li><span class="qs-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29a2.41 2.41 0 0 0 3.42 0l6.58-6.58a2.41 2.41 0 0 0 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg></span><div><strong>Узнайте цену</strong><span>Подскажем подходящий вариант и стоимость</span></div></li><li><span class="qs-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg></span><div><strong>Оформите заказ</strong><span>Договоримся об удобном времени</span></div></li></ol>
-      <a class="btn btn--gold btn--block" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%83%D0%B1%D0%BE%D1%80%D0%BA%D0%B8." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Узнать цену в WhatsApp</span></a>
-    </aside>
+    <div class="phone-wrap" data-hero-in>
+      <ol class="chat-steps" aria-hidden="true"><li data-step="1"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg><span>Сфотографируйте</span></li><li data-step="2"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29a2.41 2.41 0 0 0 3.42 0l6.58-6.58a2.41 2.41 0 0 0 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg><span>Узнайте цену</span></li><li data-step="3"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg><span>Оформите заказ</span></li></ol>
+      <div class="phone" role="img" aria-label="Фото. Цена. Заказ.">
+        <div class="phone-screen">
+          <div class="chat-head">
+            <img src="../assets/img/favicon-96.png?v=3" alt="" width="36" height="36">
+            <div><strong>Comfort Cleaning</strong><span>WhatsApp</span></div>
+          </div>
+          <div class="chat-body">
+            <div class="msg msg--out msg--photo" data-msg="1" data-step-on="1">
+              <div class="photo-tile"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg><span>Фото</span></div>
+              <p>Здравствуйте! Подскажите, пожалуйста, стоимость химчистки дивана.</p><svg class="ticks" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6.5 4.5 10 11 2"/><path d="M7 6.5 10.5 10 17 2"/></svg>
+            </div>
+            <div class="typing" data-msg="2"><i></i><i></i><i></i></div>
+            <div class="msg msg--in" data-msg="3" data-step-on="2"><p>Здравствуйте! Спасибо за фото. Назовём цену с учётом размера и ткани.</p></div>
+            <div class="msg msg--in" data-msg="4"><p>Какой день вам удобен?</p></div>
+            <div class="msg msg--out" data-msg="5"><p>Суббота подойдёт.</p><svg class="ticks" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6.5 4.5 10 11 2"/><path d="M7 6.5 10.5 10 17 2"/></svg></div>
+            <div class="chat-done" data-msg="6" data-step-on="3"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg><span>Время согласовано</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <a class="scroll-cue" href="#story" data-hero-in><span>Листайте вниз</span><i aria-hidden="true"></i></a>
 </section>
-<section class="story" aria-label="Наш подход">
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track"><div class="marquee-row"><span>Уборка квартир</span><i aria-hidden="true"></i><span>Уборка офисов</span><i aria-hidden="true"></i><span>Химчистка диванов</span><i aria-hidden="true"></i><span>Чистка штор</span><i aria-hidden="true"></i><span>Чистка ковров</span><i aria-hidden="true"></i><span>Чистка матрасов</span><i aria-hidden="true"></i></div><div class="marquee-row"><span>Уборка квартир</span><i aria-hidden="true"></i><span>Уборка офисов</span><i aria-hidden="true"></i><span>Химчистка диванов</span><i aria-hidden="true"></i><span>Чистка штор</span><i aria-hidden="true"></i><span>Чистка ковров</span><i aria-hidden="true"></i><span>Чистка матрасов</span><i aria-hidden="true"></i></div></div>
+</div>
+<section class="story" id="story" aria-label="Наш подход">
   <div class="container story-stage">
-    <div class="story-lines"><p class="story-line">Уборка отнимает время.</p><p class="story-line">Подарите его себе и своим близким.</p><p class="story-line">А чистоту доверьте нам.</p></div>
-    <div class="story-bar" aria-hidden="true"></div>
+    <p class="eyebrow">Наш подход</p>
+    <p class="story-text" data-story>Уборка отнимает время. Подарите его себе и своим близким. А чистоту доверьте нам.</p>
   </div>
 </section>
-<section class="section section--mist" id="services">
-  <div class="container">
-    <div class="section-head reveal"><p class="eyebrow">Услуги</p><h2>Выберите уборку под свою задачу</h2><p class="section-sub">У каждого помещения свои потребности. Выберите нужную услугу, а остальное Comfort Cleaning возьмёт на себя.</p></div>
-    <div class="services-grid">
+<section class="section section--mist services" id="services">
+  <div class="container"><div class="section-head reveal"><p class="eyebrow">Услуги</p><h2 data-split>Выберите уборку под свою задачу</h2><p class="section-sub">У каждого помещения свои потребности. Выберите нужную услугу, а остальное Comfort Cleaning возьмёт на себя.</p></div></div>
+  <div class="services-viewport">
+    <div class="services-track">
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><span class="card-num">01</span></div>
       <h3><a href="uborka-doma">Уборка квартир и домов</a></h3>
       <p>Верните дому ощущение чистоты и уюта.</p>
       <ul class="checklist"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Комплексная уборка</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Генеральная уборка</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Почасовые пакеты</span></li></ul>
       <div class="card-foot"><a class="link-arrow" href="uborka-doma">Подробнее об уборке квартир<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span><span class="card-num">02</span></div>
       <h3><a href="uborka-ofisa">Уборка офисов</a></h3>
       <p>Чистый, ухоженный офис меняет и рабочую атмосферу, и первое впечатление.</p>
       <ul class="checklist"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Разовая уборка</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Регулярная уборка</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Ежедневное и еженедельное обслуживание</span></li></ul>
       <div class="card-foot"><a class="link-arrow" href="uborka-ofisa">Подробнее об уборке офисов<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg></span><span class="card-num">03</span></div>
       <h3><a href="chistka-divanov">Химчистка диванов и мягкой мебели</a></h3>
       <p>Поможем вашему дивану снова выглядеть чистым, свежим и ухоженным.</p>
       <ul class="checklist"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Диваны</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Кресла и сиденья</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Мягкая мебель</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Чистка у вас дома</span></li></ul>
       <div class="card-foot"><a class="link-arrow" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%85%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B8%20%D0%B4%D0%B8%D0%B2%D0%B0%D0%BD%D0%B0." target="_blank" rel="noopener">Узнать цену на химчистку дивана<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h20"/><path d="M4 3v18h4c-1.2-5.5 0.5-11 3-18"/><path d="M20 3v18h-4c1.2-5.5-0.5-11-3-18"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h20"/><path d="M4 3v18h4c-1.2-5.5 0.5-11 3-18"/><path d="M20 3v18h-4c1.2-5.5-0.5-11-3-18"/></svg></span><span class="card-num">04</span></div>
       <h3><a href="chistka-shtor">Чистка штор</a></h3>
       <p>Убираем накопившуюся пыль и повседневные загрязнения, и комната снова выглядит свежей.</p>
       
       <div class="card-foot"><a class="link-arrow" href="chistka-shtor">Подробнее о чистке штор<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><rect x="8.5" y="7" width="7" height="10" rx="1"/><path d="M7.5 20.5V22M10.5 20.5V22M13.5 20.5V22M16.5 20.5V22M7.5 2v1.5M10.5 2v1.5M13.5 2v1.5M16.5 2v1.5"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><rect x="8.5" y="7" width="7" height="10" rx="1"/><path d="M7.5 20.5V22M10.5 20.5V22M13.5 20.5V22M16.5 20.5V22M7.5 2v1.5M10.5 2v1.5M13.5 2v1.5M16.5 2v1.5"/></svg></span><span class="card-num">05</span></div>
       <h3><a href="chistka-kovrov">Чистка ковров</a></h3>
       <p>Способ чистки подбираем под тип и состояние ковра.</p>
       
       <div class="card-foot"><a class="link-arrow" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B8%20%D0%BA%D0%BE%D0%B2%D1%80%D0%B0." target="_blank" rel="noopener">Узнать цену на чистку ковра<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg></span><span class="card-num">06</span></div>
       <h3><a href="chistka-matrasov">Чистка матрасов</a></h3>
       <p>Профессиональная чистка, которая помогает убрать пыль и загрязнения, накопившиеся в матрасе со временем.</p>
       
       <div class="card-foot"><a class="link-arrow" href="chistka-matrasov">Подробнее о чистке матрасов<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
+    <article class="service-card service-card--end on-dark reveal">
+      <p class="end-title">Чтобы узнать цену, не нужна долгая переписка</p>
+      <a class="btn btn--gold magnetic" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%83%D0%B1%D0%BE%D1%80%D0%BA%D0%B8." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Узнать цену в WhatsApp</span></a>
+    </article>
     </div>
   </div>
+  <div class="container"><div class="services-progress" aria-hidden="true"><i></i></div></div>
 </section>
 <section class="section">
   <div class="container">
-    <div class="section-head reveal"><p class="eyebrow">Пакеты уборки</p><h2>Комплексная или почасовая уборка?</h2><p class="section-sub">Если нужно привести в порядок всё помещение, выбирайте комплексную уборку. Если важны конкретные задачи, подойдёт почасовой пакет.</p></div>
+    <div class="section-head reveal"><p class="eyebrow">Пакеты уборки</p><h2 data-split>Комплексная или почасовая уборка?</h2><p class="section-sub">Если нужно привести в порядок всё помещение, выбирайте комплексную уборку. Если важны конкретные задачи, подойдёт почасовой пакет.</p></div>
     <div class="packages">
       <article class="package reveal">
         <h3>Комплексная уборка</h3>
@@ -243,21 +280,30 @@
 </section>
 <section class="section section--ocean on-dark emphasis">
   <div class="container emphasis-grid">
-    <div class="reveal">
-      <p class="eyebrow">Диваны, шторы, мягкая мебель</p>
-      <h2>Иногда не нужно менять всё вокруг.</h2>
-      <p class="section-sub">Достаточно вернуть чистоту и свежесть вещам, которыми вы пользуетесь каждый день.</p>
-      <div class="section-actions">
-        <a class="btn btn--gold" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%85%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B8%20%D0%B4%D0%B8%D0%B2%D0%B0%D0%BD%D0%B0." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Узнать цену на химчистку дивана</span></a>
+    <div>
+      <p class="eyebrow reveal">Диваны, шторы, мягкая мебель</p>
+      <h2 data-split>Иногда не нужно менять всё вокруг.</h2>
+      <p class="section-sub reveal">Достаточно вернуть чистоту и свежесть вещам, которыми вы пользуетесь каждый день.</p>
+      <ul class="emphasis-chips reveal"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Диваны и кресла</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Стулья и сиденья</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Шторы и тюль</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Матрасы</span></li></ul>
+      <div class="section-actions reveal">
+        <a class="btn btn--gold magnetic" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%85%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B8%20%D0%B4%D0%B8%D0%B2%D0%B0%D0%BD%D0%B0." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Узнать цену на химчистку дивана</span></a>
         <a class="link-arrow" href="chistka-divanov">Подробнее о химчистке диванов<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
     </div>
-    <ul class="emphasis-list reveal"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Диваны и кресла</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Стулья и сиденья</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Шторы и тюль</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Матрасы</span></li></ul>
+    <div class="wipe-card reveal" data-wipe>
+      <div class="wipe-clean">
+        <span class="wipe-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg></span>
+        <p class="wipe-title">Свежесть возвращается.</p>
+      </div>
+      <canvas class="wipe-canvas" aria-hidden="true"></canvas>
+      <p class="wipe-hint"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Проведите по карточке, чтобы стереть пыль</span></p>
+      <button class="wipe-reset" type="button">Ещё раз</button>
+    </div>
   </div>
 </section>
 <section class="section">
   <div class="container why">
-    <div class="why-head"><div class="section-head"><p class="eyebrow">Почему Comfort Cleaning</p><h2>Подход, которому можно доверять</h2><p class="section-sub">Каждый дом и каждая вещь получают отдельное внимание.</p></div></div>
+    <div class="why-head"><div class="section-head"><p class="eyebrow">Почему Comfort Cleaning</p><h2 data-split>Подход, которому можно доверять</h2><p class="section-sub">Каждый дом и каждая вещь получают отдельное внимание.</p></div></div>
     <ul class="why-list"><li class="reveal"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span><div><h3>С учётом материала</h3><p>Разные ткани и поверхности требуют разного подхода. Перед работой мы учитываем особенности материала.</p></div></li><li class="reveal"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span><div><h3>Профессиональное оборудование</h3><p>Используем оборудование и методы, которые подходят для конкретной задачи.</p></div></li><li class="reveal"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><div><h3>Уважение к вашему времени</h3><p>Стараемся, чтобы уборка прошла для вас спокойно и по плану.</p></div></li><li class="reveal"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29a2.41 2.41 0 0 0 3.42 0l6.58-6.58a2.41 2.41 0 0 0 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg></span><div><h3>Понятная оценка стоимости</h3><p>Цена зависит от вида услуги, объёма работ, размера мебели и степени загрязнения.</p></div></li><li class="reveal"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span><div><h3>Честность и реальный результат</h3><p>Мы не обещаем одинаковый результат для любого пятна и материала. Заранее объясняем, что возможно, а что нет.</p></div></li></ul>
   </div>
 </section>
@@ -275,27 +321,28 @@
 </section>
 <section class="section">
   <div class="container process-wrap">
-    <div class="section-head reveal"><p class="eyebrow">Как мы работаем</p><h2>Как всё проходит</h2><p class="section-sub">Коротко и понятно. На каждом шаге вы знаете, что происходит.</p></div>
-    <ol class="process"><li class="reveal"><span class="process-num">1</span><div><h3>Вы пишете нам</h3><p>Рассказываете о задаче в WhatsApp или просто присылаете фото.</p></div></li><li class="reveal"><span class="process-num">2</span><div><h3>Определяем задачу</h3><p>Подбираем услугу с учётом состояния помещения, мебели или поверхности.</p></div></li><li class="reveal"><span class="process-num">3</span><div><h3>Согласуем время</h3><p>Выбираем удобные для вас день и час.</p></div></li><li class="reveal"><span class="process-num">4</span><div><h3>Проводим уборку</h3><p>Наша команда выполняет работу подходящими методами и оборудованием.</p></div></li><li class="reveal"><span class="process-num">5</span><div><h3>Вы наслаждаетесь чистотой</h3><p>Мы хотим, чтобы у вас оставалось больше времени, а дома было уютнее.</p></div></li></ol>
+    <div class="process-head"><div class="section-head reveal"><p class="eyebrow">Как мы работаем</p><h2 data-split>Как всё проходит</h2><p class="section-sub">Коротко и понятно. На каждом шаге вы знаете, что происходит.</p></div></div>
+    <div class="process-track"><span class="process-line" aria-hidden="true"><i></i></span><ol class="process"><li class="reveal"><span class="process-num">1</span><div><h3>Вы пишете нам</h3><p>Рассказываете о задаче в WhatsApp или просто присылаете фото.</p></div></li><li class="reveal"><span class="process-num">2</span><div><h3>Определяем задачу</h3><p>Подбираем услугу с учётом состояния помещения, мебели или поверхности.</p></div></li><li class="reveal"><span class="process-num">3</span><div><h3>Согласуем время</h3><p>Выбираем удобные для вас день и час.</p></div></li><li class="reveal"><span class="process-num">4</span><div><h3>Проводим уборку</h3><p>Наша команда выполняет работу подходящими методами и оборудованием.</p></div></li><li class="reveal"><span class="process-num">5</span><div><h3>Вы наслаждаетесь чистотой</h3><p>Мы хотим, чтобы у вас оставалось больше времени, а дома было уютнее.</p></div></li></ol></div>
   </div>
 </section>
 <section class="section section--mist">
   <div class="container">
-    <div class="section-head section-head--center reveal"><p class="eyebrow">Отзывы</p><h2>Что говорят клиенты</h2><p class="section-sub">Отзывы из нашего профиля в Google. Оригинал на азербайджанском языке, ниже перевод.</p></div>
+    <div class="section-head section-head--center reveal"><p class="eyebrow">Отзывы</p><h2 data-split>Что говорят клиенты</h2><p class="section-sub">Отзывы из нашего профиля в Google. Оригинал на азербайджанском языке, ниже перевод.</p></div>
     <div class="reviews"><figure class="review reveal"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2H4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .01-1 1.03V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2h-4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg><blockquote lang="az"><p>Comfort Cleaning şirkətinin xidmətindən çox razı qaldım! İşlərini çox səliqəli, diqqətli və peşəkar şəkildə yerinə yetirirlər. Hər şey təmiz və gözəl oldu.</p></blockquote><div class="review-translation" lang="ru"><small>Перевод с азербайджанского</small>Услуги компании Comfort Cleaning очень понравились! Работают очень аккуратно, внимательно и профессионально. Всё стало чистым и красивым.</div><figcaption><strong>Nuray T.</strong><span>Отзыв в Google</span></figcaption></figure><figure class="review reveal"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2H4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .01-1 1.03V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2h-4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg><blockquote lang="az"><p>Çox razı qaldım. Təmizlik işləri çox səliqəli və diqqətlə görülüb. Mebellərin təmizlənməsi yüksək səviyyədə oldu.</p></blockquote><div class="review-translation" lang="ru"><small>Перевод с азербайджанского</small>Всё очень понравилось. Уборку сделали очень аккуратно и внимательно. Мебель почистили на высоком уровне.</div><figcaption><strong>Ayan</strong><span>Отзыв в Google</span></figcaption></figure><figure class="review reveal"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2H4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .01-1 1.03V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.76-2-2-2h-4c-1.25 0-2 .75-2 1.97V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg><blockquote lang="az"><p>Xidmətləri gözlədiyimdən də yaxşı oldu.</p></blockquote><div class="review-translation" lang="ru"><small>Перевод с азербайджанского</small>Услуги оказались даже лучше, чем ожидалось.</div><figcaption><strong>Məhəmməd M.</strong><span>Отзыв в Google</span></figcaption></figure></div>
   </div>
 </section>
 <section class="section">
   <div class="container">
-    <div class="section-head section-head--center reveal"><p class="eyebrow">Вопросы</p><h2>Частые вопросы</h2></div>
+    <div class="section-head section-head--center reveal"><p class="eyebrow">Вопросы</p><h2 data-split>Частые вопросы</h2></div>
     <div class="faq reveal"><details name="faq"><summary><span>Как рассчитывается цена?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></summary><div class="faq-a"><p>Стоимость зависит от вида услуги, размера помещения или мебели, степени загрязнения, объёма работ и нужного оборудования. Чтобы узнать точную цену, пришлите фото в WhatsApp.</p></div></details><details name="faq"><summary><span>Все ли пятна выводятся?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></summary><div class="faq-a"><p>Результат зависит от типа и давности пятна, а также от особенностей ткани и поверхности. Некоторые пятна могут не уйти полностью, иногда остаются изменение цвета или следы прежней чистки. О возможном результате мы рассказываем до начала работы.</p></div></details><details name="faq"><summary><span>Нужно ли вывозить мебель из дома?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></summary><div class="faq-a"><p>Большую часть мягкой мебели мы чистим на месте, у вас дома. Нужна ли перевозка, зависит от размера мебели и вида услуги.</p></div></details><details name="faq"><summary><span>Сколько сохнет мебель после чистки?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></summary><div class="faq-a"><p>Время высыхания зависит от типа ткани, метода чистки, проветривания и условий в помещении. Пока мебель полностью не высохнет, пользоваться ею не рекомендуется.</p></div></details><details name="faq"><summary><span>Можно ли проводить чистку в доме, где есть дети, пожилые люди или домашние животные?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></summary><div class="faq-a"><p>Средства подбираем с учётом материала и вида загрязнения и применяем строго по назначению и в правильной дозировке. Там, где есть дети, пожилые люди или животные, работаем с особым вниманием. После чистки советуем проветрить комнату и дождаться полного высыхания мебели.</p></div></details><details name="faq"><summary><span>Нужно ли быть дома во время уборки?</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M12 5v14"/></svg></summary><div class="faq-a"><p>Это зависит от вида услуги и того, как мы договоримся заранее. Главное, чтобы у нас был доступ в помещение и необходимые условия для работы.</p></div></details></div>
   </div>
 </section>
 <section class="section section--ocean on-dark final">
-  <div class="container reveal">
-    <h2>Не откладывайте уборку. Пусть комфорт начнётся сегодня.</h2>
-    <p class="section-sub">Выберите услугу для дома, офиса или мягкой мебели. Пришлите фото, и мы подскажем подходящий вариант и цену.</p>
-    <div class="section-actions section-actions--center"><a class="btn btn--gold" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%83%D0%B1%D0%BE%D1%80%D0%BA%D0%B8." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Узнать цену в WhatsApp</span></a></div>
+  <canvas class="water" aria-hidden="true"></canvas>
+  <div class="container">
+    <h2 data-split>Не откладывайте уборку. Пусть комфорт начнётся сегодня.</h2>
+    <p class="section-sub reveal">Выберите услугу для дома, офиса или мягкой мебели. Пришлите фото, и мы подскажем подходящий вариант и цену.</p>
+    <div class="section-actions section-actions--center reveal"><a class="btn btn--gold magnetic" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%83%D0%B1%D0%BE%D1%80%D0%BA%D0%B8." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Узнать цену в WhatsApp</span></a></div>
   </div>
 </section>
 </main>
@@ -336,6 +383,12 @@
   <a class="btn btn--line-dark" href="tel:+994552782778" aria-label="Позвонить"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Позвонить</span></a>
   <a class="btn btn--gold" href="https://wa.me/994552782778?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%20%D0%9F%D0%BE%D0%B4%D1%81%D0%BA%D0%B0%D0%B6%D0%B8%D1%82%D0%B5%2C%20%D0%BF%D0%BE%D0%B6%D0%B0%D0%BB%D1%83%D0%B9%D1%81%D1%82%D0%B0%2C%20%D1%81%D1%82%D0%BE%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C%20%D1%83%D0%B1%D0%BE%D1%80%D0%BA%D0%B8." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Узнать цену</span></a>
 </div>
-<script src="../assets/js/main.js?v=4" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js" defer></script>
+<script src="../assets/js/main.js?v=5" defer></script>
+<script src="../assets/js/water.js?v=5" defer></script>
+<script src="../assets/js/motion.js?v=5" defer></script>
 </body>
 </html>

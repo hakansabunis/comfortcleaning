@@ -24,10 +24,20 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png?v=3">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon-192.png?v=3">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v=3">
+<script>
+(function (d) {
+  d.classList.add("js");
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    d.classList.add("motion");
+    setTimeout(function () { if (!window.__motionReady) d.classList.remove("motion"); }, 3500);
+  }
+})(document.documentElement);
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,500;1,400&family=Onest:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/css/style.css?v=8">
+<link rel="stylesheet" href="../assets/css/style.css?v=9">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -81,65 +91,71 @@
 </div>
 <main id="main">
 <section class="page-hero on-dark">
+  <canvas class="water" aria-hidden="true"></canvas>
   <div class="container">
-    <p class="eyebrow">Services</p>
-    <h1>Our services</h1>
-    <p class="lead">Every space needs something different. From homes and offices to sofas and curtains, every job is matched to the space and the material.</p>
-    <div class="hero-actions"><a class="btn btn--gold" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20cleaning." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Get a price on WhatsApp</span></a></div>
+    <p class="eyebrow" data-hero-in>Services</p>
+    <h1 data-split="hero">Our services</h1>
+    <p class="lead" data-hero-in>Every space needs something different. From homes and offices to sofas and curtains, every job is matched to the space and the material.</p>
+    <div class="hero-actions" data-hero-in><a class="btn btn--gold magnetic" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20cleaning." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Get a price on WhatsApp</span></a></div>
   </div>
 </section>
-<section class="section section--mist" id="services">
-  <div class="container">
-    
-    <div class="services-grid">
+<section class="section section--mist services" id="services">
+  <div class="container"></div>
+  <div class="services-viewport">
+    <div class="services-track">
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span><span class="card-num">01</span></div>
       <h3><a href="home-cleaning">Home cleaning</a></h3>
       <p>Bring back the clean, comfortable feeling of home.</p>
       <ul class="checklist"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Full home clean</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Deep clean</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Hourly packages</span></li></ul>
       <div class="card-foot"><a class="link-arrow" href="home-cleaning">About home cleaning<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg></span><span class="card-num">02</span></div>
       <h3><a href="office-cleaning">Office cleaning</a></h3>
       <p>A clean, tidy office changes both the working atmosphere and the first impression.</p>
       <ul class="checklist"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Single visit cleaning</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Regular cleaning</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Daily and weekly service</span></li></ul>
       <div class="card-foot"><a class="link-arrow" href="office-cleaning">About office cleaning<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg></span><span class="card-num">03</span></div>
       <h3><a href="sofa-cleaning">Sofa and upholstery cleaning</a></h3>
       <p>We help your sofa look cleaner, fresher and well cared for.</p>
       <ul class="checklist"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Sofas</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Armchairs and seats</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Upholstered furniture</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Cleaning in your home</span></li></ul>
       <div class="card-foot"><a class="link-arrow" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20sofa%20cleaning." target="_blank" rel="noopener">Get a sofa cleaning price<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h20"/><path d="M4 3v18h4c-1.2-5.5 0.5-11 3-18"/><path d="M20 3v18h-4c1.2-5.5-0.5-11-3-18"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 3h20"/><path d="M4 3v18h4c-1.2-5.5 0.5-11 3-18"/><path d="M20 3v18h-4c1.2-5.5-0.5-11-3-18"/></svg></span><span class="card-num">04</span></div>
       <h3><a href="curtain-cleaning">Curtain cleaning</a></h3>
       <p>We remove the dust and everyday grime curtains collect, so your room looks fresh again.</p>
       
       <div class="card-foot"><a class="link-arrow" href="curtain-cleaning">About curtain cleaning<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><rect x="8.5" y="7" width="7" height="10" rx="1"/><path d="M7.5 20.5V22M10.5 20.5V22M13.5 20.5V22M16.5 20.5V22M7.5 2v1.5M10.5 2v1.5M13.5 2v1.5M16.5 2v1.5"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3.5" width="14" height="17" rx="1.5"/><rect x="8.5" y="7" width="7" height="10" rx="1"/><path d="M7.5 20.5V22M10.5 20.5V22M13.5 20.5V22M16.5 20.5V22M7.5 2v1.5M10.5 2v1.5M13.5 2v1.5M16.5 2v1.5"/></svg></span><span class="card-num">05</span></div>
       <h3><a href="carpet-cleaning">Carpet cleaning</a></h3>
       <p>We choose the cleaning method to suit the type and condition of your carpet.</p>
       
       <div class="card-foot"><a class="link-arrow" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20carpet%20cleaning." target="_blank" rel="noopener">Get a carpet cleaning price<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
     <article class="service-card reveal">
-      <span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg></span>
+      <div class="card-top"><span class="service-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg></span><span class="card-num">06</span></div>
       <h3><a href="mattress-cleaning">Mattress cleaning</a></h3>
       <p>Professional cleaning that helps reduce the dust and dirt a mattress gathers over time.</p>
       
       <div class="card-foot"><a class="link-arrow" href="mattress-cleaning">About mattress cleaning<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></div>
     </article>
+    <article class="service-card service-card--end on-dark reveal">
+      <p class="end-title">Getting a price shouldn't take a long chat</p>
+      <a class="btn btn--gold magnetic" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20cleaning." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Get a price on WhatsApp</span></a>
+    </article>
     </div>
   </div>
+  <div class="container"><div class="services-progress" aria-hidden="true"><i></i></div></div>
 </section>
 <section class="section">
   <div class="container">
-    <div class="section-head reveal"><p class="eyebrow">Home cleaning packages</p><h2>Full clean or hourly help?</h2><p class="section-sub">Need the whole place done? Choose a full clean. Need help with specific jobs? Book by the hour.</p></div>
+    <div class="section-head reveal"><p class="eyebrow">Home cleaning packages</p><h2 data-split>Full clean or hourly help?</h2><p class="section-sub">Need the whole place done? Choose a full clean. Need help with specific jobs? Book by the hour.</p></div>
     <div class="packages">
       <article class="package reveal">
         <h3>Full home clean</h3>
@@ -161,16 +177,25 @@
 </section>
 <section class="section section--ocean on-dark emphasis">
   <div class="container emphasis-grid">
-    <div class="reveal">
-      <p class="eyebrow">Sofas, curtains, upholstery</p>
-      <h2>Sometimes you don't need to change everything.</h2>
-      <p class="section-sub">Bringing back the freshness of the things you use every day is often enough.</p>
-      <div class="section-actions">
-        <a class="btn btn--gold" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20sofa%20cleaning." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Get a sofa cleaning price</span></a>
+    <div>
+      <p class="eyebrow reveal">Sofas, curtains, upholstery</p>
+      <h2 data-split>Sometimes you don't need to change everything.</h2>
+      <p class="section-sub reveal">Bringing back the freshness of the things you use every day is often enough.</p>
+      <ul class="emphasis-chips reveal"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Sofas and armchairs</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Chairs and seats</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Curtains and sheers</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Mattresses</span></li></ul>
+      <div class="section-actions reveal">
+        <a class="btn btn--gold magnetic" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20sofa%20cleaning." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Get a sofa cleaning price</span></a>
         <a class="link-arrow" href="sofa-cleaning">About sofa cleaning<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
     </div>
-    <ul class="emphasis-list reveal"><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Sofas and armchairs</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Chairs and seats</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Curtains and sheers</span></li><li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span>Mattresses</span></li></ul>
+    <div class="wipe-card reveal" data-wipe>
+      <div class="wipe-clean">
+        <span class="wipe-icon"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3"/><path d="M2 11v5a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v2H6v-2a2 2 0 0 0-4 0Z"/><path d="M4 18v2"/><path d="M20 18v2"/><path d="M12 4v9"/></svg></span>
+        <p class="wipe-title">Freshness comes back.</p>
+      </div>
+      <canvas class="wipe-canvas" aria-hidden="true"></canvas>
+      <p class="wipe-hint"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/></svg><span>Move across the card to wipe the dust away</span></p>
+      <button class="wipe-reset" type="button">Again</button>
+    </div>
   </div>
 </section>
 <section class="section">
@@ -186,10 +211,11 @@
   </div>
 </section>
 <section class="section section--ocean on-dark final">
-  <div class="container reveal">
-    <h2>Don't put it off. Let comfort start today.</h2>
-    <p class="section-sub">Choose the right cleaning for your home, office or upholstery. Send a photo, and we'll suggest the best option and price.</p>
-    <div class="section-actions section-actions--center"><a class="btn btn--gold" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20cleaning." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Get a price on WhatsApp</span></a></div>
+  <canvas class="water" aria-hidden="true"></canvas>
+  <div class="container">
+    <h2 data-split>Don't put it off. Let comfort start today.</h2>
+    <p class="section-sub reveal">Choose the right cleaning for your home, office or upholstery. Send a photo, and we'll suggest the best option and price.</p>
+    <div class="section-actions section-actions--center reveal"><a class="btn btn--gold magnetic" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20cleaning." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Get a price on WhatsApp</span></a></div>
   </div>
 </section>
 </main>
@@ -230,6 +256,12 @@
   <a class="btn btn--line-dark" href="tel:+994552782778" aria-label="Call"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span>Call</span></a>
   <a class="btn btn--gold" href="https://wa.me/994552782778?text=Hello%21%20I%27d%20like%20to%20get%20a%20price%20for%20cleaning." target="_blank" rel="noopener"><svg class="icon icon--fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg><span>Get a price</span></a>
 </div>
-<script src="../assets/js/main.js?v=4" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js" defer></script>
+<script src="../assets/js/main.js?v=5" defer></script>
+<script src="../assets/js/water.js?v=5" defer></script>
+<script src="../assets/js/motion.js?v=5" defer></script>
 </body>
 </html>

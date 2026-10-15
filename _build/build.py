@@ -24,9 +24,12 @@ WA_NUMBER = "994552782778"
 EMAIL = "comfortdivanyuma@gmail.com"
 INSTAGRAM = "https://www.instagram.com/comfort__cleaning/"
 IG_HANDLE = "@comfort__cleaning"
-CSS_V = 8
-JS_V = 4
+CSS_V = 9
+JS_V = 5
 IMG_V = 3
+CDN = "https://cdn.jsdelivr.net/npm"
+GSAP = "gsap@3.15.0"
+LENIS = "lenis@1.3.17"
 
 LANGS = {"az": AZ, "ru": RU, "en": EN}
 ORDER = ["az", "ru", "en"]
@@ -91,6 +94,7 @@ ICONS = {
     "wrench": '<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>',
     "clock": '<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>',
     "eye": '<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>',
+    "sparkle": '<path d="M12 3l1.9 5.8a2 2 0 0 0 1.3 1.3L21 12l-5.8 1.9a2 2 0 0 0-1.3 1.3L12 21l-1.9-5.8a2 2 0 0 0-1.3-1.3L3 12l5.8-1.9a2 2 0 0 0 1.3-1.3z"/>',
     "info": '<circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>',
 }
 WHATSAPP_PATH = (
@@ -183,6 +187,16 @@ def head(C, key, title, desc, graph):
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon-32.png?v={IMG_V}">
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon-192.png?v={IMG_V}">
 <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png?v={IMG_V}">
+<script>
+(function (d) {{
+  d.classList.add("js");
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {{
+    d.classList.add("motion");
+    setTimeout(function () {{ if (!window.__motionReady) d.classList.remove("motion"); }}, 3500);
+  }}
+}})(document.documentElement);
+</script>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:ital,wght@0,400;0,500;1,400&family=Onest:wght@400;500;600;700&display=swap">
@@ -286,7 +300,13 @@ def footer(C, key, wa_key):
   <a class="btn btn--line-dark" href="tel:{PHONE_TEL}" aria-label="{attr(ui['call'])}">{icon("phone")}<span>{e(ui['call'])}</span></a>
   {wa_btn(C, wa_key, label=ui['cta_short'])}
 </div>
+<script src="{CDN}/{GSAP}/dist/gsap.min.js" defer></script>
+<script src="{CDN}/{GSAP}/dist/ScrollTrigger.min.js" defer></script>
+<script src="{CDN}/{GSAP}/dist/SplitText.min.js" defer></script>
+<script src="{CDN}/{LENIS}/dist/lenis.min.js" defer></script>
 <script src="../assets/js/main.js?v={JS_V}" defer></script>
+<script src="../assets/js/water.js?v={JS_V}" defer></script>
+<script src="../assets/js/motion.js?v={JS_V}" defer></script>
 </body>
 </html>
 """
@@ -298,64 +318,103 @@ def section_head(eyebrow, h2, sub=None, center=False, reveal=True):
     cls = "section-head" + (" section-head--center" if center else "") + (" reveal" if reveal else "")
     eb = f'<p class="eyebrow">{e(eyebrow)}</p>' if eyebrow else ""
     sb = f'<p class="section-sub">{e(sub)}</p>' if sub else ""
-    return f'<div class="{cls}">{eb}<h2>{e(h2)}</h2>{sb}</div>'
+    return f'<div class="{cls}">{eb}<h2 data-split>{e(h2)}</h2>{sb}</div>'
+
+
+def water(cls="water"):
+    return f'<canvas class="{cls}" aria-hidden="true"></canvas>'
+
+
+def phone_chat(C):
+    h = C["home"]
+    c = h["chat"]
+    steps = "".join(
+        f'<li data-step="{i}">{icon(ic)}<span>{e(t)}</span></li>'
+        for i, (ic, t, _d) in enumerate(h["card_steps"], 1)
+    )
+    tick = '<svg class="ticks" viewBox="0 0 18 12" aria-hidden="true"><path d="M1 6.5 4.5 10 11 2"/><path d="M7 6.5 10.5 10 17 2"/></svg>'
+    return f"""<div class="phone-wrap" data-hero-in>
+      <ol class="chat-steps" aria-hidden="true">{steps}</ol>
+      <div class="phone" role="img" aria-label="{attr(h['card_title'])}">
+        <div class="phone-screen">
+          <div class="chat-head">
+            <img src="../assets/img/favicon-96.png?v={IMG_V}" alt="" width="36" height="36">
+            <div><strong>{e(c['name'])}</strong><span>{e(c['status'])}</span></div>
+          </div>
+          <div class="chat-body">
+            <div class="msg msg--out msg--photo" data-msg="1" data-step-on="1">
+              <div class="photo-tile">{icon('sofa')}<span>{e(c['photo_label'])}</span></div>
+              <p>{e(c['out1'])}</p>{tick}
+            </div>
+            <div class="typing" data-msg="2"><i></i><i></i><i></i></div>
+            <div class="msg msg--in" data-msg="3" data-step-on="2"><p>{e(c['in1'])}</p></div>
+            <div class="msg msg--in" data-msg="4"><p>{e(c['in2'])}</p></div>
+            <div class="msg msg--out" data-msg="5"><p>{e(c['out2'])}</p>{tick}</div>
+            <div class="chat-done" data-msg="6" data-step-on="3">{icon('calendar')}<span>{e(c['done'])}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>"""
 
 
 def hero_home(C):
     h = C["home"]
-    steps = "".join(
-        f'<li><span class="qs-icon">{icon(ic)}</span><div><strong>{e(t)}</strong><span>{e(d)}</span></div></li>'
-        for ic, t, d in h["card_steps"]
-    )
     return f"""<section class="hero on-dark">
+  {water()}
   <div class="container hero-grid">
     <div class="hero-copy">
-      <h1>{e(h['h1'])}</h1>
-      <p class="lead">{e(h['lead'])}</p>
-      <div class="hero-actions">
-        {wa_btn(C, 'general')}
+      <h1 data-split="hero">{e(h['h1'])}</h1>
+      <p class="lead" data-hero-in>{e(h['lead'])}</p>
+      <div class="hero-actions" data-hero-in>
+        {wa_btn(C, 'general', 'btn btn--gold magnetic')}
         <a class="btn btn--line-dark" href="#services">{e(C['ui']['see_services'])}</a>
       </div>
     </div>
-    <aside class="quote-card">
-      <p class="quote-card__title">{e(h['card_title'])}</p>
-      <ol class="quote-steps">{steps}</ol>
-      {wa_btn(C, 'general', 'btn btn--gold btn--block')}
-    </aside>
+    {phone_chat(C)}
   </div>
+  <a class="scroll-cue" href="#story" data-hero-in><span>{e(h['scroll_hint'])}</span><i aria-hidden="true"></i></a>
 </section>
 """
 
 
 def page_hero(C, eyebrow, h1, lead, wa_key, eyebrow_href=None):
     if eyebrow_href:
-        eb = f'<a class="eyebrow" href="{eyebrow_href}">{e(eyebrow)}</a>'
+        eb = f'<a class="eyebrow" href="{eyebrow_href}" data-hero-in>{e(eyebrow)}</a>'
     else:
-        eb = f'<p class="eyebrow">{e(eyebrow)}</p>'
+        eb = f'<p class="eyebrow" data-hero-in>{e(eyebrow)}</p>'
     return f"""<section class="page-hero on-dark">
+  {water()}
   <div class="container">
     {eb}
-    <h1>{e(h1)}</h1>
-    <p class="lead">{e(lead)}</p>
-    <div class="hero-actions">{wa_btn(C, wa_key)}</div>
+    <h1 data-split="hero">{e(h1)}</h1>
+    <p class="lead" data-hero-in>{e(lead)}</p>
+    <div class="hero-actions" data-hero-in>{wa_btn(C, wa_key, 'btn btn--gold magnetic')}</div>
   </div>
 </section>
+"""
+
+
+def sec_marquee(C):
+    names = [C["services"][k]["short"] for k in SERVICE_KEYS]
+    row = "".join(f"<span>{e(n)}</span><i aria-hidden=\"true\"></i>" for n in names)
+    return f"""<div class="marquee" aria-hidden="true">
+  <div class="marquee-track"><div class="marquee-row">{row}</div><div class="marquee-row">{row}</div></div>
+</div>
 """
 
 
 def sec_story(C):
     h = C["home"]
-    lines = "".join(f'<p class="story-line">{e(s)}</p>' for s in h["story"])
-    return f"""<section class="story" aria-label="{attr(h['story_label'])}">
+    return f"""<section class="story" id="story" aria-label="{attr(h['story_label'])}">
   <div class="container story-stage">
-    <div class="story-lines">{lines}</div>
-    <div class="story-bar" aria-hidden="true"></div>
+    <p class="eyebrow">{e(h['story_label'])}</p>
+    <p class="story-text" data-story>{e(h['story_text'])}</p>
   </div>
 </section>
 """
 
 
-def service_card(C, k):
+def service_card(C, k, n):
     lang = C["lang"]
     s = C["services"][k]
     items = checklist(s["items"]) if s["items"] else ""
@@ -365,7 +424,7 @@ def service_card(C, k):
     else:
         link = f'<a class="link-arrow" href="{href(lang, k, lang)}">{e(text)}{icon("arrow")}</a>'
     return f"""<article class="service-card reveal">
-      <span class="service-icon">{icon(SERVICE_ICONS[k])}</span>
+      <div class="card-top"><span class="service-icon">{icon(SERVICE_ICONS[k])}</span><span class="card-num">0{n}</span></div>
       <h3><a href="{href(lang, k, lang)}">{e(s['name'])}</a></h3>
       <p>{e(s['card'])}</p>
       {items}
@@ -376,14 +435,20 @@ def service_card(C, k):
 def sec_services(C, with_head=True):
     b = C["services_block"]
     head_html = section_head(b["eyebrow"], b["h2"], b["sub"]) if with_head else ""
-    cards = "\n    ".join(service_card(C, k) for k in SERVICE_KEYS)
-    return f"""<section class="section section--mist" id="services">
-  <div class="container">
-    {head_html}
-    <div class="services-grid">
+    cards = "\n    ".join(service_card(C, k, n) for n, k in enumerate(SERVICE_KEYS, 1))
+    end = f"""<article class="service-card service-card--end on-dark reveal">
+      <p class="end-title">{e(C['price']['h2'])}</p>
+      {wa_btn(C, 'general', 'btn btn--gold magnetic')}
+    </article>"""
+    return f"""<section class="section section--mist services" id="services">
+  <div class="container">{head_html}</div>
+  <div class="services-viewport">
+    <div class="services-track">
     {cards}
+    {end}
     </div>
   </div>
+  <div class="container"><div class="services-progress" aria-hidden="true"><i></i></div></div>
 </section>
 """
 
@@ -420,19 +485,29 @@ def sec_packages(C, with_head=True):
 def sec_emphasis(C):
     m = C["emphasis"]
     lang = C["lang"]
+    h = C["home"]
     items = "".join(f'<li>{icon("check")}<span>{e(t)}</span></li>' for t in m["list"])
     return f"""<section class="section section--ocean on-dark emphasis">
   <div class="container emphasis-grid">
-    <div class="reveal">
-      <p class="eyebrow">{e(m['eyebrow'])}</p>
-      <h2>{e(m['h2'])}</h2>
-      <p class="section-sub">{e(m['sub'])}</p>
-      <div class="section-actions">
-        {wa_btn(C, 'sofa', label=m['cta'])}
+    <div>
+      <p class="eyebrow reveal">{e(m['eyebrow'])}</p>
+      <h2 data-split>{e(m['h2'])}</h2>
+      <p class="section-sub reveal">{e(m['sub'])}</p>
+      <ul class="emphasis-chips reveal">{items}</ul>
+      <div class="section-actions reveal">
+        {wa_btn(C, 'sofa', 'btn btn--gold magnetic', label=m['cta'])}
         <a class="link-arrow" href="{href(lang, 'sofa', lang)}">{e(m['link'])}{icon('arrow')}</a>
       </div>
     </div>
-    <ul class="emphasis-list reveal">{items}</ul>
+    <div class="wipe-card reveal" data-wipe>
+      <div class="wipe-clean">
+        <span class="wipe-icon">{icon('sofa')}</span>
+        <p class="wipe-title">{e(h['wipe_title'])}</p>
+      </div>
+      <canvas class="wipe-canvas" aria-hidden="true"></canvas>
+      <p class="wipe-hint">{icon('sparkle')}<span>{e(h['wipe_hint'])}</span></p>
+      <button class="wipe-reset" type="button">{e(h['wipe_reset'])}</button>
+    </div>
   </div>
 </section>
 """
@@ -479,8 +554,8 @@ def sec_process(C, cls="section"):
     )
     return f"""<section class="{cls}">
   <div class="container process-wrap">
-    {section_head(p['eyebrow'], p['h2'], p['sub'])}
-    <ol class="process">{steps}</ol>
+    <div class="process-head">{section_head(p['eyebrow'], p['h2'], p['sub'])}</div>
+    <div class="process-track"><span class="process-line" aria-hidden="true"><i></i></span><ol class="process">{steps}</ol></div>
   </div>
 </section>
 """
@@ -527,10 +602,11 @@ def sec_faq(C, ids, h2=None, cls="section"):
 def sec_final(C, wa_key):
     f = C["final"]
     return f"""<section class="section section--ocean on-dark final">
-  <div class="container reveal">
-    <h2>{e(f['h2'])}</h2>
-    <p class="section-sub">{e(f['sub'])}</p>
-    <div class="section-actions section-actions--center">{wa_btn(C, wa_key)}</div>
+  {water()}
+  <div class="container">
+    <h2 data-split>{e(f['h2'])}</h2>
+    <p class="section-sub reveal">{e(f['sub'])}</p>
+    <div class="section-actions section-actions--center reveal">{wa_btn(C, wa_key, 'btn btn--gold magnetic')}</div>
   </div>
 </section>
 """
@@ -584,6 +660,7 @@ def page_home(C):
     ]
     body = (
         hero_home(C)
+        + sec_marquee(C)
         + sec_story(C)
         + sec_services(C)
         + sec_packages(C)
