@@ -45,7 +45,7 @@ C = {
         "title": "Comfort Cleaning",
         "desc": "Bakıda ev və ofis təmizliyi, divan, yumşaq mebel, pərdə, xalça və döşək təmizliyi. Şəkil göndərin, WhatsApp ilə qiymət alın.",
         "h1": "Evinizə təmizlik, həyatınıza rahatlıq.",
-        "lead": "Evinizdə və ofisinizdə təmizliyin verdiyi rahatlığı hiss edin. Comfort Cleaning ev və ofislərin, divan və yumşaq mebellərin, pərdə və digər səthlərin peşəkar təmizliyi ilə məşğul olur. Siz vaxtınızı özünüzə və sevdiklərinizə ayırın. Təmizliyi isə bizə həvalə edin.",
+        "lead": "Evinizdə və ofisinizdə təmizliyin verdiyi rahatlığı hiss edin. Comfort Cleaning olaraq ev və ofislərin, divan və yumşaq mebellərin, pərdə və digər səthlərin peşəkar təmizlik xidmətlərini təklif edirik. Siz vaxtınızı özünüzə və sevdiklərinizə ayırın. Təmizliyi isə bizə həvalə edin.",
         "card_title": "Şəkil göndər. Qiymət al. Sifariş et.",
         "card_steps": [
             ("camera", "Şəkil göndərin", "Əşyanın və ya məkanın şəklini çəkin"),
@@ -333,10 +333,10 @@ C = {
         },
         "about": {
             "title": "Haqqımızda | Comfort Cleaning",
-            "desc": "Comfort Cleaning Bakıda ev və ofis, yumşaq mebel, pərdə, xalça və döşək təmizliyi ilə məşğul olur. Yanaşmamız və iş prosesimiz.",
+            "desc": "Comfort Cleaning olaraq Bakıda ev və ofis, yumşaq mebel, pərdə, xalça və döşək təmizliyi xidmətlərini təklif edirik. Yanaşmamız və iş prosesimiz.",
             "eyebrow": "Haqqımızda",
             "h1": "Bizim üçün təmizlik rahatlıq deməkdir.",
-            "lead": "Comfort Cleaning Bakıda ev və ofislərin, divan və yumşaq mebelin, pərdə, xalça və döşəklərin peşəkar təmizliyi ilə məşğul olur.",
+            "lead": "Comfort Cleaning olaraq Bakıda ev və ofislərin, divan və yumşaq mebelin, pərdə, xalça və döşəklərin peşəkar təmizlik xidmətlərini təklif edirik.",
             "story_h": "Təmizlikdən daha çoxu",
             "prose": [
                 "Təmizliyi sadəcə görülən iş kimi görmürük. Bizim üçün əsas olan onun gətirdiyi nəticədir. Səliqəli ev, rahat iş mühiti və sizə qalan vaxt.",
