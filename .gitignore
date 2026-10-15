@@ -1,3 +1,6 @@
 comfort.jpg
 design/
 1.png
+/*.jpeg
+.claude/
+__pycache__/

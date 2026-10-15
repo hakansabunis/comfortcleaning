@@ -6,73 +6,230 @@
     <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/en/"/>
-  </url>
-  <url>
-    <loc>https://groupcomfortcleaning.com/az/xidmetler</loc>
-    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/xidmetler"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uslugi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/services"/>
-  </url>
-  <url>
-    <loc>https://groupcomfortcleaning.com/az/haqqimizda</loc>
-    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/haqqimizda"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/o-nas"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/about"/>
-  </url>
-  <url>
-    <loc>https://groupcomfortcleaning.com/az/elaqe</loc>
-    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/elaqe"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/kontakty"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/"/>
   </url>
   <url>
     <loc>https://groupcomfortcleaning.com/ru/</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/"/>
-  </url>
-  <url>
-    <loc>https://groupcomfortcleaning.com/ru/uslugi</loc>
-    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/xidmetler"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uslugi"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/services"/>
-  </url>
-  <url>
-    <loc>https://groupcomfortcleaning.com/ru/o-nas</loc>
-    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/haqqimizda"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/o-nas"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/about"/>
-  </url>
-  <url>
-    <loc>https://groupcomfortcleaning.com/ru/kontakty</loc>
-    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/elaqe"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/kontakty"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/"/>
   </url>
   <url>
     <loc>https://groupcomfortcleaning.com/en/</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/xidmetler</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/xidmetler"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uslugi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/xidmetler"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/uslugi</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/xidmetler"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uslugi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/xidmetler"/>
   </url>
   <url>
     <loc>https://groupcomfortcleaning.com/en/services</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/xidmetler"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uslugi"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/services"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/xidmetler"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/paketler</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/paketler"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/pakety"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/packages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/paketler"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/pakety</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/paketler"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/pakety"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/packages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/paketler"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/en/packages</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/paketler"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/pakety"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/packages"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/paketler"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/haqqimizda</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/haqqimizda"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/haqqimizda"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/o-nas</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/haqqimizda"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/o-nas"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/haqqimizda"/>
   </url>
   <url>
     <loc>https://groupcomfortcleaning.com/en/about</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/haqqimizda"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/o-nas"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/about"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/haqqimizda"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/elaqe</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/elaqe"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/kontakty"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/elaqe"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/kontakty</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/elaqe"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/kontakty"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/elaqe"/>
   </url>
   <url>
     <loc>https://groupcomfortcleaning.com/en/contact</loc>
     <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/elaqe"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/kontakty"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/elaqe"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/ev-temizliyi</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/ev-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uborka-doma"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/home-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/ev-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/uborka-doma</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/ev-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uborka-doma"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/home-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/ev-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/en/home-cleaning</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/ev-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uborka-doma"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/home-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/ev-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/ofis-temizliyi</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/ofis-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uborka-ofisa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/office-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/ofis-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/uborka-ofisa</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/ofis-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uborka-ofisa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/office-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/ofis-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/en/office-cleaning</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/ofis-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/uborka-ofisa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/office-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/ofis-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/divan-temizliyi</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/divan-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-divanov"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/sofa-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/divan-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/chistka-divanov</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/divan-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-divanov"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/sofa-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/divan-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/en/sofa-cleaning</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/divan-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-divanov"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/sofa-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/divan-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/perde-temizliyi</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/perde-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-shtor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/curtain-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/perde-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/chistka-shtor</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/perde-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-shtor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/curtain-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/perde-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/en/curtain-cleaning</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/perde-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-shtor"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/curtain-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/perde-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/xalca-temizliyi</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/xalca-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-kovrov"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/carpet-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/xalca-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/chistka-kovrov</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/xalca-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-kovrov"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/carpet-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/xalca-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/en/carpet-cleaning</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/xalca-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-kovrov"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/carpet-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/xalca-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/az/dosek-temizliyi</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/dosek-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-matrasov"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/mattress-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/dosek-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/ru/chistka-matrasov</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/dosek-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-matrasov"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/mattress-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/dosek-temizliyi"/>
+  </url>
+  <url>
+    <loc>https://groupcomfortcleaning.com/en/mattress-cleaning</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://groupcomfortcleaning.com/az/dosek-temizliyi"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://groupcomfortcleaning.com/ru/chistka-matrasov"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://groupcomfortcleaning.com/en/mattress-cleaning"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://groupcomfortcleaning.com/az/dosek-temizliyi"/>
   </url>
 </urlset>
