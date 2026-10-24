@@ -79,6 +79,7 @@ C = {
         "home_clean": {
             "name": "Ev təmizliyi",
             "short": "Ev təmizliyi",
+            "seo_title": "Ev təmizliyi Bakıda | Comfort Cleaning",
             "card": "Evinizdə təmizlik və rahatlıq hissini yenidən yaradın.",
             "items": ["Ümumi təmizlik", "Dərin təmizlik", "Saatlıq təmizlik paketləri"],
             "link": ("Ev təmizliyi haqqında", "page"),
@@ -102,6 +103,7 @@ C = {
         "office": {
             "name": "Ofis təmizliyi",
             "short": "Ofis təmizliyi",
+            "seo_title": "Ofis təmizliyi Bakıda | Comfort Cleaning",
             "card": "Təmiz və səliqəli ofis həm iş mühitini, həm də ilk təəssüratı dəyişir.",
             "items": ["Birdəfəlik ofis təmizliyi", "Müntəzəm təmizlik", "Gündəlik və həftəlik xidmətlər"],
             "link": ("Ofis təmizliyi haqqında", "page"),
@@ -125,6 +127,7 @@ C = {
         "sofa": {
             "name": "Divan və yumşaq mebel təmizliyi",
             "short": "Divan təmizliyi",
+            "seo_title": "Divan və mebel təmizliyi Bakıda | Comfort Cleaning",
             "card": "Divanınızın daha təmiz, baxımlı və təravətli görünməsinə kömək edirik.",
             "items": ["Divan təmizliyi", "Kreslo və oturacaqlar", "Yumşaq mebel", "Yerində təmizləmə"],
             "link": ("Divan üçün qiymət al", "wa"),
@@ -154,6 +157,7 @@ C = {
         "curtain": {
             "name": "Pərdə təmizliyi",
             "short": "Pərdə təmizliyi",
+            "seo_title": "Pərdə təmizliyi Bakıda | Comfort Cleaning",
             "card": "Pərdələrdə toplanan toz və gündəlik çirklənmənin azalmasına kömək edərək məkanınıza təravətli görünüş qazandırırıq.",
             "items": [],
             "link": ("Pərdə təmizliyi haqqında", "page"),
@@ -181,6 +185,7 @@ C = {
         "carpet": {
             "name": "Xalça təmizliyi",
             "short": "Xalça təmizliyi",
+            "seo_title": "Xalça təmizliyi Bakıda | Comfort Cleaning",
             "card": "Xalçanın növünə və vəziyyətinə uyğun təmizləmə üsulu seçilir.",
             "items": [],
             "link": ("Xalça üçün qiymət al", "wa"),
@@ -207,6 +212,7 @@ C = {
         "mattress": {
             "name": "Döşək təmizliyi",
             "short": "Döşək təmizliyi",
+            "seo_title": "Döşək təmizliyi Bakıda | Comfort Cleaning",
             "card": "Döşəyinizdə zamanla toplanan toz və çirklənmənin azalmasına kömək edən peşəkar təmizlik xidməti.",
             "items": [],
             "link": ("Döşək təmizliyi haqqında", "page"),
@@ -314,7 +320,7 @@ C = {
     },
     "pages": {
         "services": {
-            "title": "Xidmətlər | Comfort Cleaning",
+            "title": "Təmizlik xidmətləri Bakıda | Comfort Cleaning",
             "desc": "Comfort Cleaning xidmətləri. Bakıda ev və ofis təmizliyi, divan və yumşaq mebel, pərdə, xalça və döşək təmizliyi.",
             "eyebrow": "Xidmətlər",
             "h1": "Xidmətlərimiz",

@@ -79,6 +79,7 @@ C = {
         "home_clean": {
             "name": "Home cleaning",
             "short": "Home cleaning",
+            "seo_title": "Home cleaning in Baku | Comfort Cleaning",
             "card": "Bring back the clean, comfortable feeling of home.",
             "items": ["Full home clean", "Deep clean", "Hourly packages"],
             "link": ("About home cleaning", "page"),
@@ -102,6 +103,7 @@ C = {
         "office": {
             "name": "Office cleaning",
             "short": "Office cleaning",
+            "seo_title": "Office cleaning in Baku | Comfort Cleaning",
             "card": "A clean, tidy office changes both the working atmosphere and the first impression.",
             "items": ["Single visit cleaning", "Regular cleaning", "Daily and weekly service"],
             "link": ("About office cleaning", "page"),
@@ -125,6 +127,7 @@ C = {
         "sofa": {
             "name": "Sofa and upholstery cleaning",
             "short": "Sofa cleaning",
+            "seo_title": "Sofa and upholstery cleaning in Baku | Comfort Cleaning",
             "card": "We help your sofa look cleaner, fresher and well cared for.",
             "items": ["Sofas", "Armchairs and seats", "Upholstered furniture", "Cleaning in your home"],
             "link": ("Get a sofa cleaning price", "wa"),
@@ -154,6 +157,7 @@ C = {
         "curtain": {
             "name": "Curtain cleaning",
             "short": "Curtain cleaning",
+            "seo_title": "Curtain cleaning in Baku | Comfort Cleaning",
             "card": "We remove the dust and everyday grime curtains collect, so your room looks fresh again.",
             "items": [],
             "link": ("About curtain cleaning", "page"),
@@ -181,6 +185,7 @@ C = {
         "carpet": {
             "name": "Carpet cleaning",
             "short": "Carpet cleaning",
+            "seo_title": "Carpet cleaning in Baku | Comfort Cleaning",
             "card": "We choose the cleaning method to suit the type and condition of your carpet.",
             "items": [],
             "link": ("Get a carpet cleaning price", "wa"),
@@ -207,6 +212,7 @@ C = {
         "mattress": {
             "name": "Mattress cleaning",
             "short": "Mattress cleaning",
+            "seo_title": "Mattress cleaning in Baku | Comfort Cleaning",
             "card": "Professional cleaning that helps reduce the dust and dirt a mattress gathers over time.",
             "items": [],
             "link": ("About mattress cleaning", "page"),
@@ -318,7 +324,7 @@ C = {
     },
     "pages": {
         "services": {
-            "title": "Services | Comfort Cleaning",
+            "title": "Cleaning services in Baku | Comfort Cleaning",
             "desc": "Comfort Cleaning services in Baku. Home and office cleaning, sofa and upholstery, curtain, carpet and mattress cleaning.",
             "eyebrow": "Services",
             "h1": "Our services",

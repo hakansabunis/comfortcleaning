@@ -842,7 +842,7 @@ def page_service(C, k):
             "areaServed": {"@type": "City", "name": ui["city"]},
         },
     ]
-    title = f"{s['short']} | Comfort Cleaning"
+    title = s.get("seo_title") or f"{s['short']} | Comfort Cleaning"
     return head(C, k, title, s["desc"], graph) + header(C, k, k) + body + footer(C, k, k)
 
 
