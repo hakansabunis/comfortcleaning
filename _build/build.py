@@ -30,6 +30,8 @@ IMG_V = 3
 CDN = "https://cdn.jsdelivr.net/npm"
 GSAP = "gsap@3.15.0"
 LENIS = "lenis@1.3.17"
+# Cloudflare Web Analytics, cookieless. The token is public by design.
+CF_BEACON = """<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "353b17cf12604256abd2ad62a50cb3b7"}'></script>"""
 
 LANGS = {"az": AZ, "ru": RU, "en": EN}
 ORDER = ["az", "ru", "en"]
@@ -307,6 +309,7 @@ def footer(C, key, wa_key):
 <script src="../assets/js/main.js?v={JS_V}" defer></script>
 <script src="../assets/js/water.js?v={JS_V}" defer></script>
 <script src="../assets/js/motion.js?v={JS_V}" defer></script>
+{CF_BEACON}
 </body>
 </html>
 """
