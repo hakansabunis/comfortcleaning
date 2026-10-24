@@ -632,6 +632,15 @@ def business(C):
         "areaServed": {"@type": "City", "name": C["ui"]["city"]},
         "sameAs": [INSTAGRAM],
         "description": C["home"]["desc"],
+        "knowsLanguage": ["az", "ru", "en"],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": dict(C["ui"]["nav"])["services"],
+            "itemListElement": [
+                {"@type": "Offer", "itemOffered": {"@type": "Service", "name": C["services"][k]["name"], "url": abs_url(C["lang"], k)}}
+                for k in SERVICE_KEYS
+            ],
+        },
     }
 
 

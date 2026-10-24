@@ -42,10 +42,10 @@ C = {
         "packages": "Hello! I'd like to know more about your cleaning packages.",
     },
     "home": {
-        "title": "Comfort Cleaning",
+        "title": "Comfort Cleaning | Home, office and sofa cleaning in Baku",
         "desc": "Home and office cleaning, sofa and upholstery cleaning, curtain, carpet and mattress cleaning in Baku. Send a photo on WhatsApp and get a price.",
         "h1": "Clean spaces, easier days.",
-        "lead": "Feel the calm that comes with a clean home and office. Comfort Cleaning takes care of homes and offices, sofas and upholstery, curtains and other surfaces. Spend your time on yourself and the people you love, and leave the cleaning to us.",
+        "lead": "Feel the calm that comes with a clean home and office. Comfort Cleaning takes care of homes and offices across Baku, sofas and upholstery, curtains and other surfaces. Spend your time on yourself and the people you love, and leave the cleaning to us.",
         "card_title": "Send a photo. Get a price. Book.",
         "card_steps": [
             ("camera", "Take a photo", "Of the room, sofa or item"),
